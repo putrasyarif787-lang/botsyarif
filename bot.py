@@ -1,8 +1,9 @@
 import logging
+import os
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-BOT_TOKEN = "8336349505:AAEKJ5aQcKX8jipXdby2OwnR5DKTl7Cu6FM"
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8336349505:AAEKJ5aQcKX8jipXdby2OwnR5DKTl7Cu6FM")
 
 logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
@@ -22,7 +23,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 async def info(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Bot Telegram sederhana dibuat dengan Python.")
+    await update.message.reply_text("Bot Telegram Syarif - dibuat dengan Python.")
 
 async def hitung(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
